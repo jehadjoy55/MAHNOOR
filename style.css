@@ -4,17 +4,20 @@ body {
   justify-content: center;
   height: 100vh;
   background: #b784db;
+  margin: 0;
 }
 
 .envelope {
   position: relative;
   cursor: pointer;
+  width: 250px;
+  height: 200px;
 }
 
 .back {
   position: relative;
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   background: #6247aa;
 }
 
@@ -77,6 +80,7 @@ body {
   height: 180px;
   top: 10px;
   left: 10px;
+  overflow: hidden;
   transition: 0.2s;
 }
 
@@ -87,14 +91,18 @@ body {
 
 .text1 {
   position: absolute;
-  color: white;
+  color: black;
   font-family: sans-serif;
-  top: -50%;
+  top: 20%;
+  left: 10%;
+  font-size: 14px;
+  width: 80%;
+  text-align: center;
 }
 
 .text {
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
   font-weight: bold;
@@ -104,28 +112,28 @@ body {
   left: 20px;
 }
 
-/*---heart -----*/
+/* Heart Styling */
 .heart {
   background-color: red;
   height: 70px;
   width: 70px;
-  position: relative;
-  top: 20px;
-  left: 20px;
-  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(-45deg) translate(-50%, -50%);
   box-shadow: -5px 10px 90px red;
   animation: untoldcoding 0.8s linear infinite;
 }
 
 @keyframes untoldcoding {
   0% {
-    transform: rotate(-45deg) scale(1.05);
+    transform: rotate(-45deg) scale(1.05) translate(-50%, -50%);
   }
   70% {
-    transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1) translate(-50%, -50%);
   }
   100% {
-    transform: rotate(-45deg) scale(0.8);
+    transform: rotate(-45deg) scale(0.8) translate(-50%, -50%);
   }
 }
 
@@ -147,4 +155,85 @@ body {
   background-color: red;
   right: -40px;
   border-radius: 50px;
+}
+
+/* Next Button */
+#next-page {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #9163cb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#next-page:hover {
+  background-color: #6247aa;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .envelope {
+    width: 200px;
+    height: 160px;
+  }
+  
+  .text1 {
+    top: 30%;
+    font-size: 12px;
+  }
+
+  .heart {
+    height: 50px;
+    width: 50px;
+    top: 60%;
+    left: 50%;
+  }
+
+  #next-page {
+    font-size: 12px;
+    padding: 8px 16px;
+    top: 85%;
+  }
+
+  .text {
+    font-size: 10px;
+    top: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .envelope {
+    width: 180px;
+    height: 150px;
+  }
+
+  .text1 {
+    font-size: 10px;
+    top: 25%;
+  }
+
+  .heart {
+    height: 40px;
+    width: 40px;
+    top: 55%;
+  }
+
+  #next-page {
+    font-size: 10px;
+    padding: 6px 12px;
+    top: 88%;
+  }
+
+  .text {
+    font-size: 8px;
+    top: -10px;
+  }
 }
