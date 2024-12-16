@@ -82,7 +82,7 @@ body {
   height: 180px;
   top: 10px;
   left: 10px;
-  overflow: hidden;
+  overflow: hidden; /* Ensure the text stays inside the letter */
   transition: transform 0.4s ease-in-out;
   border-radius: 5px;
   z-index: 1;
@@ -101,6 +101,11 @@ body {
   font-size: 14px;
   width: 80%;
   text-align: center;
+  line-height: 1.5; /* Improve readability */
+  word-wrap: break-word; /* Ensure long words wrap inside the letter */
+  overflow: hidden; /* Prevent text from spilling */
+  white-space: normal; /* Allow multi-line text */
+  z-index: 2; /* Ensure text stays above the letter background */
 }
 
 .text {
